@@ -1,6 +1,38 @@
 import $ from "jquery";
+import React from 'react';
 
 const url = 'http://php.test/php/';
+
+
+/* ГЛАВНАЯ ФУНКЦИЯ */
+export const ajaxGet = (link, data, func) => {
+	return ( $.ajax({
+		method: 'GET',
+		url: url + link,
+		data: data,
+		success: func
+	})
+	)
+};
+
+
+
+
+
+
+/* АВТОРИЗАЦИЯ */
+export const ajax_auth = (login, password, status) => {
+	return ajaxGet('auth.php', { login: login, password: password, status: status }, data => {
+		if(data !== '0') {
+			window.infoUser.info_user = JSON.parse(data);
+			window.infoUser.status_auth = 1;
+		} else alert('Неверный логин или пароль');
+	} )		
+};
+
+
+
+
 
 
 /* ПОЛУЧИТЬ ИНФОРМАЦИЮ О ИГРЕ */
@@ -53,26 +85,6 @@ export const ajax_get_info_team = (idTeam) => {
 };
 
 
-/* АВТОРИЗАЦИЯ */
-export const ajax_auth = (login, password, status) => {
-	$.ajax({
-		async: false,
-		method: 'GET',
-		url: url + 'auth.php',
-		data: {
-			login: login,
-			password: password,
-			status: status
-		},
-		success: function(data){
-			if(data !== '0') {
-				window.infoUser.info_user = JSON.parse(data);
-				window.infoUser.status_auth = 1;
-			} else alert('Неверный логин или пароль');
-			// console.log(data);
-		}
-	});	
-};
 
 
 /* 

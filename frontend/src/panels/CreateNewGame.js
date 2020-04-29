@@ -5,6 +5,7 @@ import 'semantic-ui-css/semantic.min.css';
 
 import { ajax_create_new_game  } from '.././components/GetInfoAjax/AdminAjax';
 
+
 const CreateNewGame = () => {
 
 	var nameGameElement = React.createRef(); // Название игры
@@ -17,21 +18,11 @@ const CreateNewGame = () => {
 		let dateGame = dateGameElement.current.value;
 		let timeGame = timeGameElement.current.value;
 
-		obj_result = {
-			"game": nameGame,
-			"dateToStart": dateGame,
-			"timeToStart": timeGame
-		}
-
-		ajax_create_new_game(nameGame, dateGame, timeGame);
-
 		if(nameGame !== '' && dateGame !== '' && timeGame !== '') {
-			alert(`Название игры - ${obj_result.game}\nДата начала - ${obj_result.dateToStart}\nВремя начала - ${obj_result.timeToStart}`);
+			ajax_create_new_game(nameGame, dateGame, timeGame);
 		}
+
 	};
-
-
-
 
 	return(
 		<div align='center'>

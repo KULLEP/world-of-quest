@@ -3,9 +3,9 @@
 //header('Content-Type: text/html; charset=utf-8');
 
 $server = "localhost"; /* имя хоста (уточняется у провайдера), если работаем на локальном сервере, то указываем localhost */
-$username = ""; /* Имя пользователя БД */
+$username = "root"; /* Имя пользователя БД */
 $password = ""; /* Пароль пользователя, если у пользователя нет пароля то, оставляем пустым */
-$database = ""; /* Имя базы данных, которую создали */
+$database = "php_test"; /* Имя базы данных, которую создали */
 
     // Подключение к базе данный через MySQLi
 $mysqli = new mysqli($server, $username, $password, $database);

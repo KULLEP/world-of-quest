@@ -18,6 +18,8 @@ export const rerenderNewTreeFunc = (statusRenderer) => {
 			ReactDOM.render(
 			<HashRouter>
 			<Redirect from='/' to='/home'/>
+			<Redirect from='/admin-auth' to='/home'/>
+			<Redirect from='/player-auth' to='/home'/>
 			<App />
 			</HashRouter>,
 			document.getElementById('root')

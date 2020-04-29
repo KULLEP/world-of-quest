@@ -9,7 +9,7 @@ import { ajax_auth } from './GetInfoAjax/GetInfoAjax';
 
 const FormRegAuth = ({typeForm, typeUser}) => {
 
-	const submit = () => {
+	const submit = async () => {
 
 		let loginInp = document.querySelector('.inputLogin').value;
 		let passInp = document.querySelector('.inputPassword').value;
@@ -17,7 +17,9 @@ const FormRegAuth = ({typeForm, typeUser}) => {
 		if(typeForm === 'auth') {
 
 			if(typeUser === 'admin') {
-				ajax_auth(loginInp, passInp, 'admin');
+
+				await ajax_auth(loginInp, passInp, 'admin');
+			 
 				if(window.infoUser.status_auth === 1) {
 					localStorage.setItem('authStatus', 'admin');
 					localStorage.setItem('authLogin', loginInp);
@@ -27,7 +29,7 @@ const FormRegAuth = ({typeForm, typeUser}) => {
 
 			}
 			else if (typeUser === 'player') {
-				ajax_auth(loginInp, passInp, 'player');
+				await ajax_auth(loginInp, passInp, 'player');
 				if(window.infoUser.status_auth === 1) {
 					localStorage.setItem('authStatus', 'player');
 					localStorage.setItem('authLogin', loginInp);

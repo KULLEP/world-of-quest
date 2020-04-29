@@ -1,3 +1,3 @@
 <IfModule mod_rewrite.c>
-	Header Set Access-Control-Allow-Origin "DOMAIN"
+	Header Set Access-Control-Allow-Origin "quest.unibix.ru"
 </IfModule>

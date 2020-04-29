@@ -53,6 +53,9 @@ body {
 	overflow: auto;
 }
 
+.h-100-px {
+	height: 100px;
+}
 
 .w-75 {
 	width: 75%!important;

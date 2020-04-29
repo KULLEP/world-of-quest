@@ -10,9 +10,10 @@ const EditorTeamsPlayers = () => {
 
   var id_this_game = window.infoUser.editID;
   ajax_get_list_games_or_groups('teams');  /* ЗАГРУЗКА СПИСКА ИГРОКОВ */
-
+ 
   var infoTeams = window.infoUser.info_teams_admin;
 
+  console.log(infoTeams);
 
   
   const addTeam = (e) => {
@@ -43,7 +44,6 @@ const EditorTeamsPlayers = () => {
         <Card>
         <Card.Content>
         <Card.Header>{e.name}</Card.Header>
-        <Card.Meta>Игроков - {JSON.parse(e.id_users).length}</Card.Meta>
         <Card.Description>
         <strong>Капитан - </strong> {e.captain_name}
         </Card.Description>
@@ -71,7 +71,6 @@ const EditorTeamsPlayers = () => {
       <Card>
       <Card.Content>
       <Card.Header>{e.name}</Card.Header>
-      <Card.Meta>Игроков - {JSON.parse(e.id_users).length}</Card.Meta>
       <Card.Description>
       <strong>Капитан - </strong> {e.captain_name}
       </Card.Description>
