@@ -38,20 +38,6 @@ const App = () => {
 const accessAccount = () => {
   if(localStorage.getItem('authLogin') !== null && localStorage.getItem('authPassword') !== null) {
     ajax_full_info();
-    // let status = localStorage.getItem('authStatus');
-    // let login = localStorage.getItem('authLogin');
-    // let password = localStorage.getItem('authPassword');
-    // ajax_auth(login, password, status); /* Загрузка инфы пользователя */
-
-    // let id_team = window.infoUser.info_user.id_team; // id Команды
-    // ajax_get_info_team(id_team);  Загрузка инфы команды  
-    // window.infoUser.status = status; // Статус пользователя
-
-    // let id_game = window.infoUser.info_team.id_game; // id Игры
-    // let num = window.infoUser.info_team.active_task; // Номер вопроса
-    // ajax_get_info_task(id_game, num); /* Загрузка инфы задачи  */
-    
-    // ajax_get_info_game(id_game); /* Загрузка инфы игры  */
   }
 }
 accessAccount();

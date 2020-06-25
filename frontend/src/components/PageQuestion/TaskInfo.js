@@ -33,7 +33,8 @@ const TaskInfo = () => {
 	} else {
 
 		return (
-			<div>1
+			<div>
+			1
 			</div>
 			);
 	// var name = window.infoUser.jsonInfoTeams; // Назание команды
